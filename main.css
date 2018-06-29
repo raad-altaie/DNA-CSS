@@ -1,0 +1,163 @@
+@keyframes molecule-animation {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(18vh, 0, 0);
+    }
+  }
+  @keyframes connection-animation {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+    to {
+      transform: scale3d(0, 1, 1);
+    }
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-size: 100%;
+  }
+  body html, body {
+    min-height: 100%;
+    width: 100%;
+  }
+  
+  body {
+    display: flex;
+    flex-flow: column;
+    width: 100vw;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #eef1f5;
+  }
+  
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  dna {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 21vh;
+    position: relative;
+  }
+  
+  column {
+    display: flex;
+    flex-flow: column;
+    width: 3vh;
+  }
+  column:nth-of-type(3) {
+    position: absolute;
+    left: 0;
+  }
+  
+  dot {
+    display: block;
+    width: 3vh;
+    height: 3vh;
+    margin-bottom: 3vh;
+    border-radius: 50%;
+    background-color: rgb(231, 6, 6);
+    animation-name: molecule-animation;
+    animation-duration: 1400ms;
+  }
+  column:nth-of-type(1) dot {
+    background-color: red;
+    animation-direction: alternate, normal;
+  }
+  column:nth-of-type(3) dot {
+    background-color: rgb(20, 88, 216);
+    animation-direction: alternate-reverse, normal;
+  }
+  
+  dash {
+    display: block;
+    height: 1vh;
+    width: 12vh;
+    margin-top: 1vh;
+    margin-bottom: 4vh;
+    margin-left: 1.5vh;
+    border-radius: 0.5vh;
+    background-color: silver;
+    animation-name: connection-animation;
+    animation-duration: 700ms;
+    animation-direction: alternate;
+  }
+  
+  dot,
+  dash {
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  dot:nth-of-type(1),
+  dash:nth-of-type(1) {
+    animation-delay: -175ms;
+  }
+  dot:nth-of-type(2),
+  dash:nth-of-type(2) {
+    animation-delay: -350ms;
+  }
+  dot:nth-of-type(3),
+  dash:nth-of-type(3) {
+    animation-delay: -525ms;
+  }
+  dot:nth-of-type(4),
+  dash:nth-of-type(4) {
+    animation-delay: -700ms;
+  }
+  dot:nth-of-type(5),
+  dash:nth-of-type(5) {
+    animation-delay: -875ms;
+  }
+  dot:nth-of-type(6),
+  dash:nth-of-type(6) {
+    animation-delay: -1050ms;
+  }
+  dot:nth-of-type(7),
+  dash:nth-of-type(7) {
+    animation-delay: -1225ms;
+  }
+  dot:nth-of-type(8),
+  dash:nth-of-type(8) {
+    animation-delay: -1400ms;
+  }
+  
+  footer {
+    width: 100%;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  footer h1,
+  footer p {
+    max-width: 50rem;
+    font-family: Arial;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  footer h1 {
+    margin-bottom: 0.5rem;
+    color: #1458d8;
+    font-family: monospace, Arial;
+    font-size: 4rem;
+    font-weight: 100;
+    text-align: center;
+    letter-spacing: 0.16em;
+  }
+  footer p {
+    line-height: 1.3;
+  }
